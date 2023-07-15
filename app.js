@@ -35,8 +35,6 @@ app.get("/", function(req,res){
            const imageURL = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
            console.log(icon);
 
-
-
             res.write("<h1>The temperature in " + query + " is " + temp + " degrees Celsius.</h1>");
             res.write("<h2>The feels like is " + feelsLike + " </h2 \n");
             res.write("<p>The weather is currently " + description + ".</p>");
@@ -45,7 +43,6 @@ app.get("/", function(req,res){
         });
      });
 });
-
 
 app.listen(3000 , function(){
     console.log("Server is running on port 3000.");
