@@ -12,7 +12,7 @@ To run this application locally, follow these steps:
 
 1. Clone this repository (git clone https://github.com/your-username/weather-app.git).
 2. Install dependencies using `npm install`.
-3. Start the server using `npm app.js`.
+3. Start the server using `node app.js`.
 4. API_KEY = your_api_key_here in your .env file.
 5. Access the application at `http://localhost:3000/`.
 
