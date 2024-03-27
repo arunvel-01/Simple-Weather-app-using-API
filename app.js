@@ -1,8 +1,8 @@
 const express = require("express");
 const https =require("https");
 const bodyParser = require("body-parser");
-
 const app = express();
+require('dotenv').config();
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -13,7 +13,7 @@ app.get("/", function(req,res){
     app.post("/", function(req,res){
         
     const query = req.body.cityName;
-    const apiKey = "e29fb586a085d9274a8041943360508e";
+    const apiKey = process.env.API_KEY;
     const unit = "metric";
     const url = "https://api.openweathermap.org/data/2.5/weather?q=" + query + "&appid=" + apiKey + "&units=" + unit; 
 
@@ -44,6 +44,7 @@ app.get("/", function(req,res){
      });
 });
 
-app.listen(3000 , function(){
-    console.log("Server is running on port 3000.");
-});
+const port = process.env.PORT || 3000;
+app.listen(port, function(){
+    console.log("Server is running on port " + port);
+}); 
